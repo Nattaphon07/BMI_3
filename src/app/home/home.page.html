@@ -1,20 +1,39 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+  
+  <ion-toolbar style="border-radius: 60px;width: 350px;margin-left: 32px;margin-top: 10px;" color="tertiary" >
+
+    <ion-title style="text-align: center;" color="dark">
+      App BMI
     </ion-title>
   </ion-toolbar>
+ 
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content class="ion-padding" [fullscreen]>
+  <ion-img style="height: 150px;" src="../../assets/img/fitness-color-16-512.jpg"></ion-img>
+  <ion-card style="border-radius: 20px;box-shadow: 0px 0px 10px rgb(76, 235, 235);margin-top: 20px;" >
+    <ion-item>
+      <ion-input type="number" inputmode="numeric" label="น้ำหนัก" placeholder="kg" [(ngModel)]="weight"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" inputmode="numeric" label="ส่วนสูง" placeholder="cm" [(ngModel)]="height"></ion-input>
+    </ion-item>
+    
+ 
+  </ion-card>
+  <ion-button style="border: 3px solid white; box-shadow: 0px 0px 0px rgb(221, 102, 242);font-size: 20px; border-radius: 32px;margin-top: 20px;font-weight: 100px;" color="secondary" size="large" expand="block" (click)="oncal()" shape="round">คำนวน</ion-button>
+  <ion-card style="border: 3px solid white; box-shadow: 0px 0px 0px rgb(193, 188, 194);text-align: center;border-radius: 15px;">
+    <ion-card-header color="medium">
+      <ion-card-subtitle size="large">ผลลัพธ์</ion-card-subtitle>
+      <ion-card-title>{{ result }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card style="border: 3px solid white; box-shadow: 0px 0px 0px rgb(193, 188, 194);text-align: center;border-radius: 15px;">
+    <ion-card-header color="medium">
+      <ion-card-subtitle size="large">แปรผล</ion-card-subtitle>
+      <ion-card-title>{{ result_text }}</ion-card-title>
+      <br>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
+
+ 
